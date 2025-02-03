@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ak-webhop-me
+spec:
+  secretName: ak-webhop-me
+  dnsNames:
+  {{- range .Values.ingress.hosts }}
+  - {{ .host | quote }}
+  {{- end }}
+  issuerRef:
+    name: letsencrypt-prod
+    # We can reference ClusterIssuers by changing the kind here.
+    # The default value is Issuer (i.e. a locally namespaced Issuer)
+    kind: ClusterIssuer
+    group: cert-manager.io
