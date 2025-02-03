@@ -8,7 +8,7 @@ image:
   repository: ankur512512/argocd-nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "5dcb24ccfe2e16a179bf2de3163f93719c2cbfc2"
+  tag: "4b205b0d1e0a7ddd6ca67a3fde0282158ba64fc8"
 
 imagePullSecrets: []
 nameOverride: "demo-nginx-argocd"
